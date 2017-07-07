@@ -1,0 +1,10 @@
+.article {
+  position: relative;
+  margin: auto;
+  max-width: 900px;
+  width: 90%;
+  padding: 2em;
+  background-color: white;
+  z-index: -1;
+  height: 100vh;
+}
