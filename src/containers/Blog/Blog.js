@@ -6,8 +6,8 @@ import Post from "../../components/Post/Post";
 import posts from "../../posts";
 import { selectPost } from "../../actions";
 
-class BlogClass extends React.Component {
-  blog = PropTypes.object.isRequired
+class Blog extends React.Component {
+  blog = PropTypes.object.isRequired;
 
   static getPreloadedState() {
     return {
@@ -20,18 +20,26 @@ class BlogClass extends React.Component {
     const { blog, dispatch } = this.props;
     return (
       <section className="blog">
-        <section className="content">
-          <Post content={blog.posts[blog.selectedId].content} />
-        </section>
+        <ul>
+          {blog.posts.map(p =>
+            <li key={p.id}>
+              <a
+                href="#!"
+                onClick={e => {
+                  dispatch(selectPost(p.id));
+                  e.preventDefault();
+                }}
+              >
+                {p.name}
+              </a>
+              &nbsp;
+            </li>
+          )}
+        </ul>
+        <Post post={blog.posts[blog.selectedId]} />
       </section>
     );
   }
 }
 
-const Blog = connect(
-  state => {
-    return state;
-  }
-)(BlogClass);
-
-export default Blog;
+export default connect(state => state)(Blog);

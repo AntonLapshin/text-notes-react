@@ -1,8 +1,6 @@
-import * as Actions from "../actions";
-
 export default (state = {}, action) => {
   switch (action.type) {
-    case Actions.selectPost.type:
+    case "SELECT_POST":
       return {
         ...state,
         selectedId: action.id

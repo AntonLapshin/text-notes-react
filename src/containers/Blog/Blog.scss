@@ -1,0 +1,15 @@
+.blog {
+  position: relative;
+  margin: auto;
+  max-width: 900px;
+  width: 90%;
+  padding: 2em;
+  background-color: white;
+  min-height: 100vh;
+
+  > ul {
+    > li {
+      display: inline-block;
+    }
+  }
+}
