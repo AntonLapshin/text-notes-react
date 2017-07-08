@@ -13,6 +13,17 @@ class Popover extends React.Component {
     };
   }
 
+  addNote() {
+    const sel = window.getSelection();
+    const p = sel.anchorNode.parentNode;
+    p.contentEditable = true;
+    window.document.execCommand("underline");
+    p.removeAttribute("contentEditable");
+    const u = sel.anchorNode.parentNode;
+    const uid = 1;
+    u.outerHTML = `<span class="note" data-id="${uid}">${u.innerHTML}</span>`;
+  }
+
   popover = PropTypes.object.isRequired;
 
   render() {
@@ -27,9 +38,9 @@ class Popover extends React.Component {
     const className = `popover ${visible ? "active" : ""}`;
 
     return (
-      <div className={className} style={style}>
+      <div ref="popover" className={className} style={style}>
         <div className="content">
-          <a href="#!">
+          <a href="#!" onClick={e => this.addNote()}>
             <i className="material-icons">mode_edit</i>
           </a>
         </div>
