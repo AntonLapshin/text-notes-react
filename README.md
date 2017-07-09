@@ -1,5 +1,7 @@
 # text-notes-react
 
+![](https://www.stemmer-imaging.se/media/cache/gallery_dialog/uploads/suppliers/Datapath-I1.jpg)
+
 Test assignment. Original description:
 
 > Build a medium.com style commenting / notes system.
