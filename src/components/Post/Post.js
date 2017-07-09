@@ -43,7 +43,7 @@ class Post extends React.Component {
 
   render() {
     this.dispatch = this.props.dispatch;
-    const { content, name } = this.props.post;
+    const { content } = this.props.post;
     const html = {
       __html: content
     };

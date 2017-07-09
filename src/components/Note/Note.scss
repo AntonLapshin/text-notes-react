@@ -1,14 +1,14 @@
 @import "../../styles/base";
 
 .note {
-  border: 1px tomato dashed;
+  background-color: rgba(0, 0, 0, 0.1);
   cursor: pointer;
   &:hover {
     background-color: gold;
   }
 
   &.active {
-    background-color: $colorActive;
+    background-color: gold;
   }
 }
 
@@ -17,29 +17,53 @@
   width: 280px;
   bottom: 1em;
   right: 1em;
-  padding: 1em;
   display: block;
   border-radius: 4px;
   transition: transform 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19),
     opacity 300ms ease;
   transform: translateY(20px);
   opacity: 0;
-  color: white;
   background-color: $colorBackgroundCard;
   box-shadow: 2px 3px 16px silver;
+
+  h7 {
+    margin-bottom: -1em;
+    color: lightslategray;
+  }
 
   &.active {
     opacity: 1;
     transform: translateY(0px);
   }
 
+  .card-content {
+    border-top: 1px solid rgba(160, 160, 160, 0.2);
+  }
+
   li {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 4px;
+    background-color: rgba(234, 107, 125, 0.1);
+    padding: 6px;
     margin-bottom: 1em;
+    position: relative;
+
+    &:after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 4.5px 0 4.5px 5px;
+      border-color: transparent transparent transparent rgba(234, 107, 125, 0.1);
+      right: -5px;
+      top: 5px;
+      position: absolute;
+    }
 
     > span {
       font-style: italic;
+    }
+
+    b {
+      font-size: small;
     }
 
     p {

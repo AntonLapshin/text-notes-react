@@ -50,6 +50,10 @@ export const generate = items => {
   };
 };
 
+/**
+ * Extracts the note's element
+ * @param {number} id 
+ */
 export const remove = id => {
   const el = getNoteById(id);
   el.outerHTML = el.innerHTML;

@@ -1,4 +1,4 @@
-import { generate, activate, deactivate, remove } from "../services/note";
+import { generate, activate, deactivate, remove } from "../helpers/note";
 
 export const selectPost = id => {
   return { type: "SELECT_POST", id };

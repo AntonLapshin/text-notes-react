@@ -54,47 +54,56 @@ class Note extends React.Component {
   render() {
     const { note } = this.props;
     const visible = note.active > -1;
-    const className = `note-card ${visible ? "active" : ""}`;
+    const className = `note-card card hoverable ${visible ? "active" : ""}`;
     let recordsUl;
     if (visible) {
       const activeNote = note.items.find(i => i.id === +note.active);
       const records = activeNote.records;
-      recordsUl = (
-        <ul>
-          {records.map(r => {
-            return (
-              <li key={r.date.getTime()}>
-                <b>
-                  {moment(r.date).format("YYYY-MM-DD HH:mm:ss")}
-                </b>
-                <span> You wrote:</span>
-                <br />
-                <p>
-                  {r.text}
-                </p>
-              </li>
-            );
-          })}
-        </ul>
-      );
+      if (records.length > 0) {
+        recordsUl = (
+          <div className="card-content">
+            <ul>
+              {records.map(r => {
+                return (
+                  <li key={r.date.getTime()}>
+                    <b>
+                      {moment(r.date).format("YYYY-MM-DD HH:mm:ss")}
+                    </b>
+                    <span> You wrote:</span>
+                    <br />
+                    <p>
+                      {r.text}
+                    </p>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        );
+      }
     }
     return (
       <div className={className}>
+        <div className="card-action">
+          <h7>Private Notes</h7>
+        </div>
         {recordsUl}
-        <input ref="input" placeholder="Type text" type="text" />
-        <a
-          className="waves-effect waves-light btn orange darken-3"
-          onClick={e => this.addRecord()}
-        >
-          Add
-        </a>
-        <span> </span>
-        <a
-          className="waves-effect waves-light btn red darken-3"
-          onClick={e => this.remove()}
-        >
-          Delete
-        </a>
+        <div className="card-action">
+          <input ref="input" placeholder="Type text" type="text" />
+          <a
+            className="waves-effect waves-light btn blue lighten-1"
+            onClick={e => this.addRecord()}
+          >
+            Add
+          </a>
+          <span> </span>
+          <a
+            className="waves-effect waves-teal btn-flat"
+            onClick={e => this.remove()}
+          >
+            Delete
+          </a>
+        </div>
       </div>
     );
   }
