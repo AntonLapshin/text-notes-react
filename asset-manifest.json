@@ -1,10 +1,6 @@
 {
-  "main.js": "static/js/main.f0362c9b.js",
-  "main.js.map": "static/js/main.f0362c9b.js.map",
-  "static\\media\\App.scss": "static/media/App.acbbae4b.scss",
-  "static\\media\\Blog.scss": "static/media/Blog.77de1ea1.scss",
-  "static\\media\\Note.scss": "static/media/Note.53bc1d1e.scss",
-  "static\\media\\Popover.scss": "static/media/Popover.7dada32d.scss",
-  "static\\media\\Post.scss": "static/media/Post.9b7da48e.scss",
-  "static\\media\\index.scss": "static/media/index.6c61bbeb.scss"
+  "main.css": "static/css/main.3b91f769.css",
+  "main.css.map": "static/css/main.3b91f769.css.map",
+  "main.js": "static/js/main.0b901524.js",
+  "main.js.map": "static/js/main.0b901524.js.map"
 }
