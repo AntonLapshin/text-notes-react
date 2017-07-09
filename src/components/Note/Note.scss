@@ -1,14 +1,12 @@
 @import "../../styles/base";
 
 .note {
-  background-color: rgba(0, 0, 0, 0.1);
+  transition: all ease 200ms;
+  background-color: $colorSelection;
   cursor: pointer;
-  &:hover {
-    background-color: gold;
-  }
 
   &.active {
-    background-color: gold;
+    background-color: $colorSelectionActive;
   }
 }
 
@@ -26,6 +24,10 @@
   background-color: $colorBackgroundCard;
   box-shadow: 2px 3px 16px silver;
 
+  .btn-delete {
+    color: $colorBtn !important;
+  }
+
   h7 {
     margin-bottom: -1em;
     color: lightslategray;
@@ -41,7 +43,7 @@
   }
 
   li {
-    background-color: rgba(234, 107, 125, 0.1);
+    background-color: $colorCommentBg;
     padding: 6px;
     margin-bottom: 1em;
     position: relative;
@@ -52,7 +54,7 @@
       height: 0;
       border-style: solid;
       border-width: 4.5px 0 4.5px 5px;
-      border-color: transparent transparent transparent rgba(234, 107, 125, 0.1);
+      border-color: transparent transparent transparent $colorCommentBg;
       right: -5px;
       top: 5px;
       position: absolute;

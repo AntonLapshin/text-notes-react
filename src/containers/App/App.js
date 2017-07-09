@@ -12,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <section className="app">
-        <nav className="indigo lighten-2">
+        <nav className="indigo lighten-1">
           <div className="nav-wrapper">
             <a className="brand-logo center">Text notes</a>
             <a href="/" ref="mobileNav" data-activates="mobile-nav" className="button-collapse">

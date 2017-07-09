@@ -98,7 +98,7 @@ class Note extends React.Component {
           </a>
           <span> </span>
           <a
-            className="waves-effect waves-teal btn-flat"
+            className="waves-effect waves-teal btn-flat btn-delete"
             onClick={e => this.remove()}
           >
             Delete
