@@ -2,6 +2,7 @@ import React from "react";
 import "./Popover.scss";
 import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
+import { noteCreate } from "../../actions";
 
 class Popover extends React.Component {
   static getPreloadedState() {
@@ -13,18 +14,12 @@ class Popover extends React.Component {
     };
   }
 
-  addNote() {
-    const sel = window.getSelection();
-    const p = sel.anchorNode.parentNode;
-    p.contentEditable = true;
-    window.document.execCommand("underline");
-    p.removeAttribute("contentEditable");
-    const u = sel.anchorNode.parentNode;
-    const uid = 1;
-    u.outerHTML = `<span class="note" data-id="${uid}">${u.innerHTML}</span>`;
-  }
-
   popover = PropTypes.object.isRequired;
+
+  onClick(e) {
+    const { note } = this.props;
+    this.props.dispatch(noteCreate(note.items));
+  }
 
   render() {
     const { x, y } = this.props.popover.coords;
@@ -36,11 +31,10 @@ class Popover extends React.Component {
     };
 
     const className = `popover ${visible ? "active" : ""}`;
-
     return (
       <div ref="popover" className={className} style={style}>
         <div className="content">
-          <a href="#!" onClick={e => this.addNote()}>
+          <a href="#!" onClick={e => this.onClick(e)}>
             <i className="material-icons">mode_edit</i>
           </a>
         </div>

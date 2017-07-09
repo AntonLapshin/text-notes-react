@@ -1,8 +1,9 @@
 import React from "react";
 import "./Post.scss";
 import { debounce } from "lodash";
-import getSelectionCoords from "../../services/selection";
+import getSelectionCoords from "../../helpers/selection";
 import Popover from "../Popover/Popover";
+import Note from "../Note/Note";
 import { connect } from "react-redux";
 import { selectionChange } from "../../actions";
 
@@ -19,9 +20,7 @@ const getTotalOffset = e => {
 class Post extends React.Component {
   selectionChange = debounce((e, args) => {
     const coords =
-      window.getSelection().toString() === ""
-        ? null
-        : getSelectionCoords();
+      window.getSelection().toString() === "" ? null : getSelectionCoords();
     if (coords) {
       const totalOffset = getTotalOffset(this.refs.post);
       console.log(coords, totalOffset);
@@ -55,6 +54,7 @@ class Post extends React.Component {
         </h2>
         <div dangerouslySetInnerHTML={html} />
         <Popover />
+        <Note />
       </section>
     );
   }

@@ -5,12 +5,14 @@ import { Provider } from "react-redux";
 import App from "./containers/App/App";
 import Blog from "./containers/Blog/Blog";
 import Popover from "./components/Popover/Popover";
+import Note from "./components/Note/Note";
 import createStore from "./store/create";
 import registerServiceWorker from "./registerServiceWorker";
 
 const store = createStore({
   blog: Blog.getPreloadedState(),
-  popover: Popover.getPreloadedState()
+  popover: Popover.getPreloadedState(),
+  note: Note.getPreloadedState()
 });
 
 render(
