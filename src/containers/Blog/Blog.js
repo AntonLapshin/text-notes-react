@@ -21,7 +21,7 @@ class Blog extends React.Component {
     return (
       <section className="blog">
         <ul>
-          {blog.posts.map(p =>
+          {blog.posts.length > 1 && blog.posts.map(p =>
             <li key={p.id}>
               <a
                 href="#!"

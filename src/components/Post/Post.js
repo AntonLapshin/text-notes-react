@@ -25,7 +25,7 @@ class Post extends React.Component {
       const totalOffset = getTotalOffset(this.refs.post);
       console.log(coords, totalOffset);
       coords.x = coords.x - totalOffset.x - 22;
-      coords.y = coords.y - totalOffset.y - 50 + window.pageYOffset;
+      coords.y = coords.y - totalOffset.y - 45 + window.pageYOffset;
     }
     this.dispatch(selectionChange(coords));
   }, 500);
@@ -49,9 +49,6 @@ class Post extends React.Component {
     };
     return (
       <section ref="post" className="post">
-        <h2>
-          {name}
-        </h2>
         <div dangerouslySetInnerHTML={html} />
         <Popover />
         <Note />

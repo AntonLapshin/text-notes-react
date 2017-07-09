@@ -81,7 +81,7 @@ class Note extends React.Component {
     return (
       <div className={className}>
         {recordsUl}
-        <input ref="input" type="text" />
+        <input ref="input" placeholder="Type text" type="text" />
         <a
           className="waves-effect waves-light btn orange darken-3"
           onClick={e => this.addRecord()}
