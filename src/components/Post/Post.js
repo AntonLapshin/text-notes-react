@@ -23,7 +23,6 @@ class Post extends React.Component {
       window.getSelection().toString() === "" ? null : getSelectionCoords();
     if (coords) {
       const totalOffset = getTotalOffset(this.refs.post);
-      console.log(coords, totalOffset);
       coords.x = coords.x - totalOffset.x - 22;
       coords.y = coords.y - totalOffset.y - 45 + window.pageYOffset;
     }

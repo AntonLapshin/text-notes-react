@@ -1,4 +1,4 @@
-const getMax = (arr, arrow) => {
+export const getMax = (arr, arrow) => {
   let max = 0;
   arr.forEach(item => {
     const val = arrow(item);
@@ -12,7 +12,7 @@ const getMax = (arr, arrow) => {
 //
 // TODO: Cache max value
 //
-const getUID = items => {
+export const getUID = items => {
   const max = getMax(items, item => item.id);
   return max + 1;
 };

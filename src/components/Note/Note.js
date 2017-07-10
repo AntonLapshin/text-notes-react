@@ -8,7 +8,6 @@ import {
   noteRemove,
   noteAppendRecord
 } from "../../actions";
-// const moment = require("moment");
 import moment from "moment";
 
 class Note extends React.Component {
@@ -31,6 +30,10 @@ class Note extends React.Component {
       }
     }
   };
+
+  shouldComponentUpdate(nextProps) {
+    return nextProps.note !== this.props.note;
+  }
 
   componentDidMount() {
     window.document.addEventListener("click", this.toggleNote);

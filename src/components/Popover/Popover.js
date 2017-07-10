@@ -16,12 +16,17 @@ class Popover extends React.Component {
 
   popover = PropTypes.object.isRequired;
 
+  shouldComponentUpdate(nextProps) {
+    return nextProps.popover !== this.props.popover;
+  }
+
   onClick(e) {
     const { note } = this.props;
     this.props.dispatch(noteCreate(note.items));
   }
 
   render() {
+    console.log("popover render");
     const { x, y } = this.props.popover.coords;
     const { visible } = this.props.popover;
 
