@@ -26,7 +26,6 @@ class Popover extends React.Component {
   }
 
   render() {
-    console.log("popover render");
     const { x, y } = this.props.popover.coords;
     const { visible } = this.props.popover;
 
